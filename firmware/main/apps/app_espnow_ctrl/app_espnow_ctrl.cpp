@@ -91,7 +91,7 @@ void AppEspnowControl::onOpen()
     GetHAL().setLaserEnabled(false);
 }
 
-void handle_reived_data()
+void handle_received_data()
 {
     std::lock_guard<std::mutex> lock(_mutex);
 
@@ -172,7 +172,7 @@ void AppEspnowControl::onRunning()
     LvglLockGuard lock;
 
     if (_is_receiver) {
-        handle_reived_data();
+        handle_received_data();
     } else {
         handle_send_pose();
     }
